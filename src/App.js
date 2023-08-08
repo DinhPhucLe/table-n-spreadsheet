@@ -303,7 +303,7 @@ function App() {
           
         }}
 
-        /*mergeCells = {[
+        mergeCells = {[
           {row: 0, col: 0, colspan: 36, rowspan: 1},
 
           {row: 1, col: 1, colspan: 3, rowspan: 1},
@@ -342,7 +342,7 @@ function App() {
           {row: 2, col: 5, colspan: 2, rowspan: 1},
           {row: 2, col: 8, colspan: 2, rowspan: 1},
           {row: 2, col: 34, colspan: 2, rowspan: 1}
-        ]}*/
+        ]}
       >
 
       </HotTable>
