@@ -93,6 +93,12 @@ function App() {
     TD.innerHTML = `<span style="color:orange;">${t3[0]}</span> ${t3[1]}`;
   });
 
+  registerRenderer("impotent4", (hotInstance, TD, col, row, ...rest) => {
+    textRenderer(hotInstance, TD, col, row, ...rest);
+    TD.className = 'heading htCenter htMiddle';
+    TD.innerHTML = `<span style="color:#339933;">${"J&T"}</span> <br/> ${"(Liên hệ phòng HTĐT)"}`;
+  });
+
   SetNotes(table, t1, 4, 17);
   SetNotes(table, t2, 4, 18);
   SetNotes(table, t3, 4, 19);
@@ -188,6 +194,11 @@ function App() {
         
         cells={(row, col) => {
           //if (row > 0 && row <= 3){return {renderer: 'greyBackground'}}
+          if (row === 1 && col === 31){
+            return {
+              renderer: 'impotent4',
+            }
+          }
 
           if ((col >= 4 && col <= 9 && row <= 16) || (col === 16 && row >= 2)){
             if (row <= 3 || row === 16) {
