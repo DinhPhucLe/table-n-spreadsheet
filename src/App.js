@@ -104,7 +104,7 @@ function App() {
   SetNotes(table, t3, 4, 19);
 
   const data = [
-    ["BẢNG GIÁ CÁC NHÀ VẬN CHUYỂN GỬI TỪ SUPERSHIP",,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,],
+    ["BẢNG GIÁ CÁC NHÀ VẬN CHUYỂN GỬI TỪ SUPERSHIP",,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,],
     ['', 'GIÁ NHỎ NHẤT', '', '', 'SUPERSHIP (nội bộ)', '', '', 'SUPERSHIP (nội bộ)', '', '', 'SUPERSHIP (ngoài vùng)', '', '', 'Ninja Van', '', '', 'BEST', 'Shopee Express', '', '', 'GHN', '', '', 'Viettel Post', '', '', 'GHTK', '', '', '', '', 'J&T (Liên hệ phòng HTĐT)', '', '', 'Snappy',],
     ['Khối lượng (kg) <=', 'Nội tỉnh', 'Nội miền', 'Liên miền', 'Nội thành HN/HCM', 'Nội huyện HN/HCM', '', 'Nội thành/tỉnh', 'Nội huyện', '', 'Nội tỉnh', 'Nội miền', 'Liên miền', 'Nội tỉnh', 'Nội miền', 'Liên miền', 'Toàn quốc', 'Nội tỉnh', 'Nội miền', 'Liên miền', 'Nội tỉnh', 'Nội miền', 'Liên miền', 'Nội tỉnh', 'Nội miền', 'Liên miền', 'Nội thành HN/HCM', 'Ngoại thành HN/HCM', 'Nội tỉnh còn lại', 'Nội miền', 'Liên miền', 'HCM đi nội thành', 'HCM đi các tỉnh', 'Miền Trung Tây Nguyên', 'Nội tỉnh HCM/HN (Lấy HCM - Giao HN)',],
     ['', '', '', '', 'Nội thành', 'Huyện gần', 'Huyện xa', 'Nội tỉnh', 'Huyện gần', 'Huyện xa', 'Lấy tận nơi +2k', 'Lấy tận nơi +2k', 'Lấy tận nơi +2k', 'Lấy tận nơi +1,5k', 'Lấy tận nơi +1,5k', 'Lấy tận nơi +1,5k', 'Lấy tận nơi Free', 'Lấy tận nơi Free', 'Lấy tận nơi Free', 'Lấy tận nơi Free', 'Lấy tận nơi +1k', 'Lấy tận nơi +1k', 'Lấy tận nơi +1k', 'Lấy tận nơi Free', 'Lấy tận nơi Free', 'Lấy tận nơi Free', 'Lấy tận nơi Free', 'Lấy tận nơi Free', 'Lấy tận nơi Free', 'Lấy tận nơi Free', 'Lấy tận nơi Free', 'Lấy tận nơi Free', 'Lấy tận nơi Free', 'Lấy tận nơi thỏa thuận', 'Nội thành', 'Ngoại thành'],
@@ -133,14 +133,14 @@ function App() {
 
   return (
     <>
-      
+    
+    <div style={{height: '90vh', width: '90vw', paddingLeft: '5vw', paddingRight: '5vw',
+      paddingTop: '5vh', paddingBottom: '5vh'}}>
       <HotTable
         ref={table}
         licenseKey = 'non-commercial-and-evaluation'
-        //startRows={100}
-        //startCols={100}
         data={data}
-        className='fit-adjust'
+        className='adjust'
 
         rowHeaders = {true}
         colHeaders = {true}
@@ -328,7 +328,8 @@ function App() {
       >
 
       </HotTable>
-      
+    </div>
+    
     </>
   );
 }
