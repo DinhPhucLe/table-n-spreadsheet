@@ -2,6 +2,7 @@ import 'handsontable/dist/handsontable.full.min.css';
 import { textRenderer, registerRenderer } from 'handsontable/renderers';
 import { registerAllModules } from 'handsontable/registry';
 import { HotTable } from '@handsontable/react';
+import { CellCoords, CellRange, createCellCoords, createCellRange } from 'handsontable';
 import { useRef, useEffect } from 'react';
 import React from "react";
 import './App.css';
@@ -68,10 +69,21 @@ function SetNotes(table, content, column, row) {
 
 
 
+/*function Merge(table, startRow, startColumn, endRow, endColumn) {
+  useEffect(() => {
+    const tmp = table.current.hotInstance;
+    const start = tmp.CellCoords(startRow, startColumn);
+    const end = tmp.CellCoords(endRow, endColumn);
+
+    tmp.mergeRange(tmp.CellRange(start, start, end));
+  });
+}*/
+
+
 function App() {
   const table = useRef(null);
 
-
+  //Merge(table, 0, 0, 1, 36);
 
   
     /*useEffect(() => {
@@ -276,6 +288,47 @@ function App() {
         colHeaders = {true}
         startCols = {100}
         startRows = {100}
+
+        mergeCells = {[
+          {row: 0, col: 0, rowspan: 1, colspan: 36},
+
+          {row: 1, col: 1, rowspan: 1, colspan: 3},
+          {row: 1, col: 4, rowspan: 1, colspan: 3},
+          {row: 1, col: 7, rowspan: 1, colspan: 3},
+          {row: 1, col: 10, rowspan: 1, colspan: 3},
+          {row: 1, col: 13, rowspan: 1, colspan: 3},
+          {row: 1, col: 17, rowspan: 1, colspan: 3},
+          {row: 1, col: 20, rowspan: 1, colspan: 3},
+          {row: 1, col: 23, rowspan: 1, colspan: 3},
+          {row: 1, col: 26, rowspan: 1, colspan: 5},
+          {row: 1, col: 31, rowspan: 1, colspan: 3},
+          {row: 1, col: 34, rowspan: 1, colspan: 2},
+
+          {row: 16, col: 1, rowspan: 1, colspan: 3},
+          {row: 16, col: 4, rowspan: 1, colspan: 3},
+          {row: 16, col: 7, rowspan: 1, colspan: 3},
+          {row: 16, col: 10, rowspan: 1, colspan: 3},
+          {row: 16, col: 13, rowspan: 1, colspan: 3},
+          {row: 16, col: 17, rowspan: 1, colspan: 3},
+          {row: 16, col: 20, rowspan: 1, colspan: 3},
+          {row: 16, col: 23, rowspan: 1, colspan: 3},
+          {row: 16, col: 26, rowspan: 1, colspan: 5},
+          {row: 16, col: 31, rowspan: 1, colspan: 3},
+          {row: 16, col: 34, rowspan: 1, colspan: 2},
+
+          {row: 17, col: 4, rowspan: 1, colspan: 32},
+          {row: 18, col: 4, rowspan: 1, colspan: 32},
+          {row: 19, col: 4, rowspan: 1, colspan: 32},
+
+          {row: 2, col: 0, rowspan: 2, colspan: 1},
+          {row: 2, col: 1, rowspan: 2, colspan: 1},
+          {row: 2, col: 2, rowspan: 2, colspan: 1},
+          {row: 2, col: 3, rowspan: 2, colspan: 1},
+
+          {row: 2, col: 5, rowspan: 1, colspan: 2},
+          {row: 2, col: 8, rowspan: 1, colspan: 2},
+          {row: 2, col: 34, rowspan: 1, colspan: 2}
+        ]}
         
         colWidths="0wh"
         rowHeights="0vh"
@@ -319,46 +372,8 @@ function App() {
           
         }}
 
-        mergeCells = {[
-          {row: 0, col: 0, rowspan: 1, colspan: 36},
-
-          {row: 1, col: 1, rowspan: 1, colspan: 3},
-          {row: 1, col: 4, rowspan: 1, colspan: 3},
-          {row: 1, col: 7, rowspan: 1, colspan: 3},
-          {row: 1, col: 10, rowspan: 1, colspan: 3},
-          {row: 1, col: 13, rowspan: 1, colspan: 3},
-          {row: 1, col: 17, rowspan: 1, colspan: 3},
-          {row: 1, col: 20, rowspan: 1, colspan: 3},
-          {row: 1, col: 23, rowspan: 1, colspan: 3},
-          {row: 1, col: 26, rowspan: 1, colspan: 5},
-          {row: 1, col: 31, rowspan: 1, colspan: 3},
-          {row: 1, col: 34, rowspan: 1, colspan: 2},
-
-          {row: 16, col: 1, rowspan: 1, colspan: 3},
-          {row: 16, col: 4, rowspan: 1, colspan: 3},
-          {row: 16, col: 7, rowspan: 1, colspan: 3},
-          {row: 16, col: 10, rowspan: 1, colspan: 3},
-          {row: 16, col: 13, rowspan: 1, colspan: 3},
-          {row: 16, col: 17, rowspan: 1, colspan: 3},
-          {row: 16, col: 20, rowspan: 1, colspan: 3},
-          {row: 16, col: 23, rowspan: 1, colspan: 3},
-          {row: 16, col: 26, rowspan: 1, colspan: 5},
-          {row: 16, col: 31, rowspan: 1, colspan: 3},
-          {row: 16, col: 34, rowspan: 1, colspan: 2},
-
-          {row: 17, col: 4, rowspan: 1, colspan: 32},
-          {row: 18, col: 4, rowspan: 1, colspan: 32},
-          {row: 19, col: 4, rowspan: 1, colspan: 32},
-
-          {row: 2, col: 0, rowspan: 2, colspan: 1},
-          {row: 2, col: 1, rowspan: 2, colspan: 1},
-          {row: 2, col: 2, rowspan: 2, colspan: 1},
-          {row: 2, col: 3, rowspan: 2, colspan: 1},
-
-          {row: 2, col: 5, rowspan: 1, colspan: 2},
-          {row: 2, col: 8, rowspan: 1, colspan: 2},
-          {row: 2, col: 34, rowspan: 1, colspan: 2}
-        ]}
+        
+        
       >
 
       </HotTable>
