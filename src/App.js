@@ -311,13 +311,14 @@ function App() {
               className: 'htCenter htMiddle heading'
             }
           }
-          if (row <= 3 || row === 16){
-            if (!col && row === 3){
-              return {
-                renderer: 'black',
-                className: 'test1 htCenter htMiddle'
-              }
+          if (!col && row === 2){
+            return {
+              renderer: 'black',
+              className: 'test1 htCenter htMiddle'
             }
+          }
+          if ((!col) || row <= 3 || row === 16){
+            
             return {
               renderer: 'black',
               className: 'smallHeading htCenter htMiddle'
