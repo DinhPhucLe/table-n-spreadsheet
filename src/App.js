@@ -334,8 +334,6 @@ function App() {
         rowHeights="0vh"
         manualRowResize = {true}
         manualColumnResize = {true}
-        
-        persistentStateSave={true}
 
         
         cells={(row, col) => {
