@@ -137,8 +137,10 @@ function App() {
 
   return (
     <>
-    <div style={{height: '100vh', width: '100vw', display: 'flex', justifyContent: 'center',
-      alignItems: 'center'}}>
+    <div style={{
+      //paddingLeft: '5vw', paddingRight: '5vw', paddingTop: '5vh', paddingBottom: '5vh',
+      width: Math.min('100vw', '1800px'), height: Math.min('100vh', '722px')
+    }}>
       <HotTable
         ref={table}
         licenseKey = 'non-commercial-and-evaluation'
@@ -193,7 +195,7 @@ function App() {
         rowHeights="0vh"
         manualRowResize = {true}
         manualColumnResize = {true}
-        
+        beforeRefreshDimensions = {true}
 
         
         cells={(row, col) => {
