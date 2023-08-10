@@ -139,7 +139,9 @@ function App() {
     <>
     <div style={{
       //paddingLeft: '5vw', paddingRight: '5vw', paddingTop: '5vh', paddingBottom: '5vh',
-      width: Math.min('100vw', '1850px'), height: Math.min('100vh', '722.39px')
+      width: Math.min('100vw', '1850px'), height: Math.min('100vh', '722.39px'),
+      //width: '100vw', height: '100vh',
+      display: 'flex', justifyContent: 'center', alignItems: 'center'
     }}>
       <HotTable
         ref={table}
