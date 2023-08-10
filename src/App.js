@@ -133,9 +133,7 @@ function App() {
 
   return (
     <>
-    
-    <div style={{height: '90vh', width: '90vw', paddingLeft: '5vw', paddingRight: '5vw',
-      paddingTop: '5vh', paddingBottom: '5vh'}}>
+    <div style={{height: '100vh', width: '100vw'}}>
       <HotTable
         ref={table}
         licenseKey = 'non-commercial-and-evaluation'
